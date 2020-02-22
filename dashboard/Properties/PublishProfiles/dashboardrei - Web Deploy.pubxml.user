@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATXKu7yCykEyBViTz0SWe/AAAAAACAAAAAAAQZgAAAAEAACAAAACQVx5ZyT1YRBI0p9jZRQUCpYqnLwfPA205RsYdDAxJWgAAAAAOgAAAAAIAACAAAACPNk/MlhUtVEMgEKIz1niNyHvctLiLR+VrCo6rP9ar/oAAAACsAMP2KUogwcMJcrtUGCNHYsmSPDTQSmrweMVK5HpPU7zczJ1zceghifzOhc8rQbDH+ZvT/G5sWYwUZXJlrdow6n5pUpZ9opfoXJf7hWEk5kgL78jXfga4wkQGpilLuxEv3XislT+MpgHPiKdbFo/MHQORh8vCjsfck6XyR1P+gUAAAADEBKTMfBeriuqloYN5H1AHKIfLZgr3udwasY6rdgwHmTlnxa2FSMthvqHseBYPGTw7Ro/5FeF0Rguy1VshT1WI</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:emprestimodbserver.database.windows.net,1433%3bInitial Catalog=dashboardrei_db%3bUser Id=adminuser%40emprestimodbserver%3bPassword=71OPjfmt</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="dashboard.Models.SOFCONContext">
+      <Value>Data Source=tcp:emprestimodbserver.database.windows.net,1433%3bInitial Catalog=dashboardrei_db%3bUser Id=adminuser%40emprestimodbserver%3bPassword=71OPjfmt</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

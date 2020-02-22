@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Users\Teu\source\repos\dashboard\dashboard\obj\Release\netcoreapp2.2\PubTmp\Out\" />
+  <dbfullsql path="C:\Users\Teu\source\repos\dashboard\dashboard\obj\Release\netcoreapp2.2\PubTmp\EFSQLScripts\dashboard.Models.SOFCONContext.sql" />
+</sitemanifest>

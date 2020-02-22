@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="dashboardrei" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Teu\\source\\repos\\dashboard\\dashboard\\obj\\Release\\netcoreapp2\.2\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="dashboard.Models.SOFCONContext" description="" value="Data Source=tcp:emprestimodbserver.database.windows.net,1433;Initial Catalog=dashboardrei_db;User Id=adminuser@emprestimodbserver;Password=71OPjfmt" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\Teu\\source\\repos\\dashboard\\dashboard\\obj\\Release\\netcoreapp2\.2\\PubTmp\\EFSQLScripts\\dashboard\.Models\.SOFCONContext\.sql$" />
+  </parameter>
+</parameters>

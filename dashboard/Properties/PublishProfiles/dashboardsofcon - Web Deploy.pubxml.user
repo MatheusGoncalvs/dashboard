@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATXKu7yCykEyBViTz0SWe/AAAAAACAAAAAAAQZgAAAAEAACAAAAAZ7hioY/BBeBOCzR4XHpM0pBYVkbs/Djh7gCWllJmDYQAAAAAOgAAAAAIAACAAAAACP8Ou1Q15rUbWm7cRt7yWYxzAcO9PgjF+3Zd9fOrVnIAAAACbH3ZYRdKd8lCVKy6eASvYjQw0CLCbNVopfBTtgvWmApsm0893XFkdEZ+VChi0E15DcBv9NSJW3/u4RBJc+6e8T7rSd4ZHmhmdFU2iYF/CdPUX3LzldEXUrw1TwCdTUM1EGM4V+I87SvVL/kiGu8Skm6siWS8T2XhK4t/L5jExy0AAAADSiJeh5BhtKDkQFyonNiud9z6cCS/ou01agd0Ivbugn0eu5N6TP+58t03LwAMtfDB2p4hGNnkLWeao0eFHVoH9</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:emprestimodbserver.database.windows.net,1433%3bInitial Catalog=dashboard_db%3bUser Id=adminuser%40emprestimodbserver%3bPassword=71OPjfmt</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="dashboard.Models.SOFCONContext">
+      <Value>Data Source=tcp:emprestimodbserver.database.windows.net,1433%3bInitial Catalog=dashboard_db%3bUser Id=adminuser%40emprestimodbserver%3bPassword=71OPjfmt</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
