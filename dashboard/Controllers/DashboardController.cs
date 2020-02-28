@@ -1,4 +1,6 @@
-﻿using dashboard.Services;
+﻿using dashboard.Models;
+using dashboard.Services;
+using dashboard.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -17,7 +19,7 @@ namespace dashboard.Controllers
             this.dashboardRepository = dashboardRepository;
         }
 
-       [HttpGet("Dashboard")]
+        [HttpGet("Dashboard")]
         public IActionResult Dashboard()
         {
             return View();
@@ -37,6 +39,17 @@ namespace dashboard.Controllers
             var vendedores = dashboardRepository.SomaPorGruposSemana();
 
             return Json(vendedores);
+        }
+
+        [HttpGet]
+        public IActionResult GetPedidosNaoFaturados()
+        {
+            var qtdPedidos = dashboardRepository.GetPedidosNaoFaturados();
+
+            PedidosNaoFaturadosViewModel pedido = new PedidosNaoFaturadosViewModel();
+            pedido.Quantidade = qtdPedidos;
+
+            return Json(pedido);
         }
 
     }

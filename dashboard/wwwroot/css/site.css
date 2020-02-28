@@ -7,16 +7,10 @@ a.navbar-brand {
     word-break: break-all;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
 html {
     font-size: 14px;
-}
-
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
+    position: relative;
+    min-height: 100%;
 }
 
 .border-top {
@@ -36,16 +30,14 @@ button.accept-policy {
     line-height: inherit;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-    position: relative;
-    min-height: 100%;
+body {
+    font-family: 'Roboto', 'Arial', 'Times New Roman';
+    margin-bottom: 60px;
+    background-color: #e5e5e5;
 }
 
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
+h2 {
+    font-size: 18px;
 }
 
 .footer {
@@ -58,10 +50,33 @@ body {
     line-height: 60px; /* Vertically center the text there */
 }
 
-.block {
-    background-color: #e5e5e5;
-    margin: 5px 0;
+/*Secao comercial*/
+
+.block-bg {
+    background-color: white;
 }
+
+.icon-calendar-title{
+    font-size: 22px;
+    display: block;
+    float: right;
+}
+
+.block-title-dashboard {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding-left: 10px;
+}
+
+    .block-title-dashboard h2 {
+        margin: 0;
+    }
+
+    .block {
+        background-color: #e5e5e5;
+        margin: 5px 0;
+    }
 
 .align-divs-center {
     align-items: center;
@@ -131,7 +146,6 @@ body {
 .btn-date h3 {
     margin: 0;
     font-size: 14px;
-    
 }
 
 .bottom-block {
@@ -169,10 +183,6 @@ body {
     height: 100%;
     z-index: 9999;
     background: url("../imagens/cube-loader.gif") 50% 50% no-repeat white;
-}
-
-.msg-tela-pequena-smartphone {
-    display: none;
 }
 
 #section-comercial {

@@ -14,6 +14,8 @@ namespace dashboard.Services
 
         IEnumerable<VendedoresViewModel> SomaPorGrupos();
 
+        int GetPedidosNaoFaturados();
+
         IEnumerable<VendedoresViewModel> SomaPorGruposSemana();
     }
 }

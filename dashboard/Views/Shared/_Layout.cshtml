@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - dashboard</title>
+    <title>@ViewData["Title"] - Dashboard</title>
 
     <environment include="Development">
         <!--<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />-->
@@ -12,6 +12,8 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
               crossorigin="anonymous"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a41eeaf8d1.js" crossorigin="anonymous"></script>
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -19,14 +21,18 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
               crossorigin="anonymous"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a41eeaf8d1.js" crossorigin="anonymous"></script>
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Dashboard" asp-action="Dashboard">Dashboard</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Dashboard" asp-action="Dashboard">
+                    <img src="~/imagens/logo.png" alt="logo-empresa" />
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -34,10 +40,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Dashboard" asp-action="Dashboard">Página Inicial</a>
+                            <a class="nav-link" asp-area="" asp-controller="Dashboard" asp-action="Dashboard">Página Inicial</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Dashboard" asp-action="Dashboard">Comercial</a>
+                            <a class="nav-link" asp-area="" asp-controller="Dashboard" asp-action="Dashboard">Comercial</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
@@ -48,11 +54,6 @@
     <div class="container-fluid">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
-            <div class="msg-tela-pequena-smartphone">
-                <h1>Desculpe...</h1>
-                <h3>Para o tamanho da tela deste dispositivo não é possível vizualizar o Dashboard Rei.</h3>
-                <h3>Tente novamente com um dispositivo com largura maior que 320px.</h3>
-            </div>
             @RenderBody()
         </main>
     </div>

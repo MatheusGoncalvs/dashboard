@@ -17,6 +17,11 @@ namespace dashboard.Services
             this.db = db;
         }
 
+        public int GetPedidosNaoFaturados()
+        {
+            return db.pedidos.Where(pedido => pedido.IdNfe == 0).Count();
+        }
+
         public IEnumerable<MovimGimViewModel> GetVendedores()
         {
             return db.MovimGim.
