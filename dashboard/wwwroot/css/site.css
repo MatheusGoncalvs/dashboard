@@ -13,6 +13,15 @@ html {
     min-height: 100%;
 }
 
+a, a:hover, a:visited :active:active {
+    color: #333;
+    text-decoration: none;
+}
+
+h3 {
+    font-size: 14px;
+}
+
 .border-top {
     border-top: 1px solid #e5e5e5;
 }
@@ -34,6 +43,7 @@ body {
     font-family: 'Roboto', 'Arial', 'Times New Roman';
     margin-bottom: 60px;
     background-color: #e5e5e5;
+    --switch-selected-border-color: #fff;
 }
 
 h2 {
@@ -50,59 +60,88 @@ h2 {
     line-height: 60px; /* Vertically center the text there */
 }
 
-/*Secao comercial*/
+/*Secao comercial --------------------------------------------------------------------------------------------------------------------------*/
 
 .block-bg {
     background-color: white;
 }
 
-.icon-calendar-title{
+.icon-calendar-title {
     font-size: 22px;
-    display: block;
-    float: right;
 }
 
 .block-title-dashboard {
     display: flex;
-    align-items: center;
     height: 50px;
     padding-left: 10px;
+    padding-top: 10px;
 }
 
     .block-title-dashboard h2 {
         margin: 0;
     }
 
-    .block {
-        background-color: #e5e5e5;
-        margin: 5px 0;
-    }
+.block {
+    background-color: #fff;
+    margin: 5px 0;
+    min-width: 344px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.title-block {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.txt-ultima-atualizacao h2 {
+    font-size: 12px;
+}
+
+.txt-ultima-atualizacao i {
+    float: left;
+    padding-right: 5px;
+}
+
+.middle-block {
+    margin-top: 15px;
+}
+
+.col-1-faturamento-block {
+    float: left;
+}
+
+.col-2-faturamento-block {
+    text-align: right;
+}
 
 .align-divs-center {
-    align-items: center;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
 }
 
-.btn--group {
-    float: right;
-    padding: 0 50px;
+.bg-switch {
+    background-color: #e5e5e5;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.bg-btns-area {
-    background-color: rgba(0, 0, 0, .05);
-    border-radius: 60px;
-    width: 80%;
+input + label {
+    margin-right: 35px;
 }
 
-.btn-vendedor {
+.switch {
     visibility: hidden;
     position: absolute;
 }
 
-    .btn-vendedor + label {
+    .switch + label {
         display: block;
         position: relative;
         cursor: pointer;
@@ -110,37 +149,55 @@ h2 {
         user-select: none;
     }
 
-.btn-vendedor-bg + label {
-    color: #333;
-    width: 80%;
-    height: 30px;
-    border-radius: 60px;
-}
-
-.btn-vendedor-mes-bg + label:before,
-.btn-vendedor-mes-bg + label:after {
-    display: block;
+.selected-switch-dia + label:after {
+    display: none;
     position: absolute;
-    top: 3px;
-    left: -207px;
-    bottom: 0px;
     content: "";
-}
-
-.btn-vendedor-mes-bg + label:after {
-    background-color: white;
-    width: 130px;
+    width: 80px;
+    height: 40px;
+    border: 2px solid var(--switch-selected-border-color);
+    background: transparent;
     border-radius: 10px;
-    margin: 2px 0 2px 3px;
-    transition: all 0.4s;
+    top: -7px;
+    left: -30px;
 }
 
-.btn-vendedor-mes-bg:checked + label:after {
-    transform: translateX(153px);
+.selected-switch-dia:checked + label:after {
+    display: block;
 }
 
-.btn-vendedor-semana-bg:checked + label:after {
-    transform: translateX(-130px);
+.selected-switch-semana + label:after {
+    display: none;
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 40px;
+    border: 2px solid var(--switch-selected-border-color);
+    background: transparent;
+    border-radius: 10px;
+    top: -7px;
+    left: -10px;
+}
+
+.selected-switch-semana:checked + label:after {
+    display: block;
+}
+
+.selected-switch-mes + label:after {
+    display: none;
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 40px;
+    border: 2px solid var(--switch-selected-border-color);
+    background: transparent;
+    border-radius: 10px;
+    top: -7px;
+    left: -25px;
+}
+
+.selected-switch-mes:checked + label:after {
+    display: block;
 }
 
 .btn-date h3 {
@@ -197,11 +254,6 @@ h2 {
     display: none;
 }
 
-.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
 @media (max-width: 320px) {
 
     .chartSmallPier_div {
@@ -223,6 +275,42 @@ h2 {
 
 @media (min-width: 600px) {
     .block {
-        border: 1px solid white;
+        border: 1px solid #e5e5e5;
     }
 }
+/*--Animação Toggle informar data inicial e final--------------------------------------------------------------------------------------------------*/
+/* Important styles */
+
+#toggle.on + #menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* menu appearance*/
+#menu {
+    position: relative;
+    color: #e5e5e5;
+    width: 200px;
+    padding: 10px;
+    margin: auto;
+    border-radius: 4px;
+    background: #333;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+    font-size: 14px;
+    /* just for this demo */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s;
+    z-index: 1;
+}
+
+    #menu:after {
+        position: absolute;
+        top: -15px;
+        left: 95px;
+        content: "";
+        display: block;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        z-index: 1;
+    }
