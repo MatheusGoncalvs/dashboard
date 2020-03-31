@@ -1,6 +1,7 @@
 ﻿using dashboard.Models;
 using dashboard.Services;
 using dashboard.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace dashboard.Controllers
 {
+    [Authorize]
     public class DashboardController : Controller
     {
         private readonly IDashboardRepository dashboardRepository;

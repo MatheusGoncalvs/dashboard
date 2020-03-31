@@ -3,43 +3,54 @@
     text-align: center;
     word-break: break-all;
 }
+
 html {
     font-size: 14px;
     position: relative;
     min-height: 100%;
 }
+
 a, a:hover, a:visited :active:active {
     color: #333;
     text-decoration: none;
 }
+
 h3 {
     font-size: 14px;
 }
+
 h4 {
     font-size: 22px;
 }
+
 .border-top {
     border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
     border-bottom: 1px solid #e5e5e5;
 }
+
 .box-shadow {
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
+
 button.accept-policy {
     font-size: 1rem;
     line-height: inherit;
 }
+
 body {
     font-family: 'Roboto', 'Arial', 'Times New Roman';
     margin-bottom: 60px;
     background-color: #e5e5e5;
     --switch-selected-border-color: #fff;
 }
+
 h2 {
     font-size: 18px;
 }
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -54,13 +65,16 @@ h2 {
     margin-top: 100px;
     padding-left: 17px;
 }
-.content input {
-    width: 300px;
-}
+
+    .content input {
+        width: 300px;
+    }
+
 .titulo-bloco {
     margin-bottom: 50px;
     padding-left: 15px;
 }
+
 .esqueci-a-senha {
     margin-top: 20px;
 }

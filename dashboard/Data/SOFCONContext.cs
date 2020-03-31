@@ -1,10 +1,11 @@
 ﻿using System;
+using dashboard.Data;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace dashboard.Models
 {
-    public partial class SOFCONContext : DbContext
+    public partial class SOFCONContext : IdentityDbContext<ApplicationUser>
     {
         public SOFCONContext()
         {
@@ -33,8 +34,9 @@ namespace dashboard.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
+            base.OnModelCreating(modelBuilder);
 
+            modelBuilder.HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
 
             modelBuilder.Entity<MovimGim>(entity =>
             {
