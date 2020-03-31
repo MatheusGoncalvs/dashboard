@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using dashboard.Services;
 using dashboard.Models;
+using dashboard.Data;
 
 namespace dashboard
 {
@@ -39,7 +40,11 @@ namespace dashboard
             services.AddDbContext<SOFCONContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
+
+            services.AddDefaultIdentity<ApplicationUser>(
+                options => {
+                    options.Password.RequireNonAlphanumeric = false;
+                })
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<SOFCONContext>();
 
