@@ -33,31 +33,18 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="container-fluid">
-            <!--Navbar-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href=""><img src="~/images/brand.png"></a>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link active"><span class="sr-only">(current)</span></a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
     <section class="content">
         <div class="container-fluid">
             <!--Bloco de login-->
-            <form asp-controller="Dashboard" asp-action="Dashboard">
+            <form action="/dashboard">
                 <div class="row justify-content-center">
-                    <div class="col-sm-5 block">
+                    <div class="col-sm-5 content">
                         <div class="row titulo-bloco">
-                            <h1>Efetuar login</h1>
+                            <h4>Olá, </br>Seja bem vindo!</h4>
                         </div>
                         <div class="middle--block">
                             <div class="form-group content-block">
-                                <label for="login">Nome de usuário</label>
+                                <label for="login">Email</label>
                                 <input type="text" class="form-control" id="login">
                             </div>
                             <div class="form-group">

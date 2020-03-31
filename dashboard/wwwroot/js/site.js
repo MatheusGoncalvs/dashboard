@@ -100,6 +100,12 @@ $(document).ready(function () {
     var totalEmitidos = 0;
     var totalFaturados = 0;
 
+    var daniel = 0;
+    var lucas = 0;
+    var matheus = 0;
+    var gessika = 0;
+    var deyze = 0;
+
     $(function () {
 
         $('input.switch').click(function () {
@@ -112,13 +118,13 @@ $(document).ready(function () {
             }
             else if ($('#semana').is(":checked")) {
                 totalEmitidos = 200;
-                totalFaturados = 150;
+                totalFaturados = 20;
                 $('#qtdPedidosNaoFaturados').html(totalEmitidos);
                 $('#qtdPedidosFaturados').html(totalFaturados);
                 drawChart();
             } else if ($('#mes').is(":checked")) {
                 totalEmitidos = 2000;
-                totalFaturados = 1500;
+                totalFaturados = 2126;
                 $('#qtdPedidosNaoFaturados').html(totalEmitidos);
                 $('#qtdPedidosFaturados').html(totalFaturados);
                 drawChart();
@@ -130,7 +136,40 @@ $(document).ready(function () {
                 $('#qtdPedidosFaturados').html(totalFaturados);
                 drawChart();
             }
-        })
+        });
+        $('input.switch').click(function () {
+            if ($('#chart-vendedores-dia').is(":checked")) {
+                daniel = 25;
+                lucas = 22;
+                matheus = 18;
+                gessika = 15;
+                deyze = 11;
+                drawChart();
+            }
+            else if ($('#chart-vendedores-semana').is(":checked")) {
+                daniel = 225;
+                lucas = 222;
+                matheus = 128;
+                gessika = 125;
+                deyze = 111;
+                drawChart();
+            } else if ($('#chart-vendedores-mes').is(":checked")) {
+                daniel = 2125;
+                lucas = 2122;
+                matheus = 1428;
+                gessika = 1125;
+                deyze = 1108;
+                drawChart();
+            }
+            else {
+                daniel = 25;
+                lucas = 22;
+                matheus = 18;
+                gessika = 15;
+                deyze = 11;
+                drawChart();
+            }
+        });
     });
 
     // Load the Visualization API and the piechart package.
@@ -166,11 +205,11 @@ $(document).ready(function () {
         // Create the data table.
         var dataColumn = google.visualization.arrayToDataTable([
             ['Vendedor', 'Valor'],
-            ['Daniel', 51000],
-            ['Lucas', 49000],
-            ['Matheus', 35000],
-            ['Gessika', 30000],
-            ['Deyze', 27000],
+            ['Daniel', daniel],
+            ['Lucas', lucas],
+            ['Matheus', matheus],
+            ['Gessika', gessika],
+            ['Deyze', deyze],
         ]);
 
         // Set chart options
@@ -228,5 +267,4 @@ $(document).ready(function () {
         toggleClass(this, 'on');
         return false;
     }
-
 });
