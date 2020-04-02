@@ -45,6 +45,7 @@ body {
     margin-bottom: 60px;
     background-color: #e5e5e5;
     --switch-selected-border-color: #fff;
+    --texto-claro: #fff;
 }
 
 h2 {
@@ -77,6 +78,13 @@ h2 {
 
 .esqueci-a-senha {
     margin-top: 20px;
+}
+
+.icon {
+    float: left;
+    padding-top: 7px;
+    padding-right: 5px;
+    color: var(--texto-claro);
 }
 /*Secao comercial --------------------------------------------------------------------------------------------------------------------------*/
 .block-bg {
