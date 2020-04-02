@@ -42,7 +42,8 @@ namespace dashboard
                     Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDefaultIdentity<ApplicationUser>(
-                options => {
+                options =>
+                {
                     options.Password.RequireNonAlphanumeric = false;
                 })
                 .AddDefaultUI(UIFramework.Bootstrap4)
@@ -71,6 +72,7 @@ namespace dashboard
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseNodeModules(env);
             app.UseCookiePolicy();
 
             app.UseAuthentication();
