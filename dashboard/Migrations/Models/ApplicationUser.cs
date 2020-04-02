@@ -11,5 +11,6 @@ namespace dashboard.Data
     {
         [PersonalData]
         public DateTime InicioCarreira { get; set; }
+        public string NomeCompleto { get; set; }
     }
 }

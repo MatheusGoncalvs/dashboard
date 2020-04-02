@@ -18,8 +18,13 @@ using dashboard;
 
 #line default
 #line hidden
+#line 2 "C:\Users\Teu\source\repos\dashboard\dashboard\Views\_ViewImports.cshtml"
+using dashboard.Areas.Identity.Pages.Account;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"20311c268ebd4f0c19af6bc3cd34f13ac967a843", @"/Views/Dashboard/Dashboard.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0db5428353212a15f0a3ef3a4784e2769aabc775", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2c4d95578225cd45bcb2d8e8adeb29bc8ac7eda4", @"/Views/_ViewImports.cshtml")]
     public class Views_Dashboard_Dashboard : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #line hidden
@@ -67,7 +72,7 @@ using dashboard;
                     ");
             EndContext();
             BeginContext(622, 539, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20311c268ebd4f0c19af6bc3cd34f13ac967a8433979", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20311c268ebd4f0c19af6bc3cd34f13ac967a8434140", async() => {
                 BeginContext(628, 526, true);
                 WriteLiteral(@"
                         <div class=""form-group"">

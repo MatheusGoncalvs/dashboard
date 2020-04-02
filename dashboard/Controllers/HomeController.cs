@@ -19,7 +19,7 @@ namespace dashboard.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Dashboard", "Dashboard");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

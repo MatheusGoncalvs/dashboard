@@ -18,8 +18,13 @@ using dashboard;
 
 #line default
 #line hidden
+#line 2 "C:\Users\Teu\source\repos\dashboard\dashboard\Views\_ViewImports.cshtml"
+using dashboard.Areas.Identity.Pages.Account;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3da9d5a428650ef59bdc2ccf0e5b927abcfceb6a", @"/Views/Home/Privacy.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0db5428353212a15f0a3ef3a4784e2769aabc775", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2c4d95578225cd45bcb2d8e8adeb29bc8ac7eda4", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Privacy : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
