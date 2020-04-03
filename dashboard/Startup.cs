@@ -15,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using dashboard.Services;
 using dashboard.Models;
 using dashboard.Data;
+using dashboard.Areas.Identity;
 
 namespace dashboard
 {
@@ -51,6 +52,8 @@ namespace dashboard
 
             services.AddScoped<IDashboardRepository, SqlDashboardData>();
 
+            services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>,
+                ApplicationUserClaimsPrincipalFactory>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
