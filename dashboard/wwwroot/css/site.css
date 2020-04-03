@@ -67,7 +67,7 @@ h2 {
     padding-left: 17px;
 }
 
-    .content input {
+    .content input[type=text],[type=password] {
         width: 300px;
     }
 

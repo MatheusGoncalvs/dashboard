@@ -22,7 +22,7 @@ namespace dashboard.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
+        //private readonly RoleManager<IdentityRole> _roleManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
@@ -52,24 +52,19 @@ namespace dashboard.Areas.Identity.Pages.Account
             public string FullName { get; set; }
 
             [Required]
-            [Display(Name = "Inicio Carreira")]
-            [DataType(DataType.Date)]
-            public DateTime CareerStarted { get; set; }
-
-            [Required]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
 
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [StringLength(100, ErrorMessage = "O {0} deve ter no minimo {2} e no máximo {1} caracteres.", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Password")]
+            [Display(Name = "Senha")]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Display(Name = "Confirme a senha")]
+            [Compare("Password", ErrorMessage = "A senha e a confirmação de senha não são iguais.")]
             public string ConfirmPassword { get; set; }
         }
 
@@ -92,7 +87,6 @@ namespace dashboard.Areas.Identity.Pages.Account
                     UserName = Input.Email,
                     Email = Input.Email,
                     NomeCompleto = Input.FullName,
-                    InicioCarreira = Input.CareerStarted
                 };
 
                 var result = await _userManager.CreateAsync(user, Input.Password);

@@ -25,8 +25,6 @@ namespace dashboard.Areas.Identity
 
             identity.AddClaim(new Claim("NomeCompleto",
                 user.NomeCompleto));
-            identity.AddClaim(new Claim("InicioCarreira",
-                user.InicioCarreira.ToShortDateString()));
 
             return identity;
         }
