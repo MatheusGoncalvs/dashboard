@@ -16,6 +16,7 @@ using dashboard.Services;
 using dashboard.Models;
 using dashboard.Data;
 using dashboard.Areas.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace dashboard
 {
@@ -46,6 +47,10 @@ namespace dashboard
                 options =>
                 {
                     options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireUppercase = false;
+                    options.Password.RequiredUniqueChars = 0;
+
+                    options.SignIn.RequireConfirmedEmail = false;
                 })
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<SOFCONContext>();
@@ -54,6 +59,8 @@ namespace dashboard
 
             services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>,
                 ApplicationUserClaimsPrincipalFactory>();
+
+            services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

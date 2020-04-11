@@ -4,107 +4,11 @@
 });
 
 $(document).ready(function () {
-    /*
-    var urlApi = 'Dashboard/GetVendedores';
-    var urlPedidos = 'Dashboard/GetPedidosNaoFaturados'
-    //Função que ao ser selecionado o botão de semana ou mês carrega os valores totais relacionados.
-    $(function () {
 
-        $('input.switch').click(function () {
-            if ($('#semana').is(":checked")) {
-                urlApi = 'Dashboard/GetVendedoresSemana'
-                $('#qtdPedidosNaoFaturados').html("243");
-                $('#qtdPedidosFaturados').html("121");
-                drawChart();
-            } else {
-                urlApi = 'Dashboard/GetVendedores'
-                $('#qtdPedidosNaoFaturados').html("834");
-                $('#qtdPedidosFaturados').html("732");
-                drawChart();
-            }
-        })
-    });
+    let totalEmitidos = 0;
+    let totalFaturados = 0;
 
-    function getPedidos() {
-        $.ajax({
-            url: urlPedidos,
-            dataType: "json",
-            type: "GET",
-            error: function (xhr, status, error) {
-                var err = eval(" (" + xhr.responseText + ") ");
-                //toast.error(err.message);
-            },
-            success: function (data) {
-                //$('.block').html("Requisição concluída...");
-                
-                return data.totalVendas[0];
-            }
-        });
-    }
-
-    google.charts.load('current', { 'packages': ['corechart'] });
-
-    google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-        //$('.block').html("<img src='http://i.imgur.com/zAD2y29.gif'>");
-        $.ajax({
-            url: urlApi,
-            dataType: "json",
-            type: "GET",
-            error: function (xhr, status, error) {
-                var err = eval(" (" + xhr.responseText + ") ");
-                //toast.error(err.message);
-            },
-            success: function (data) {
-                //$('.block').html("Requisição concluída...");
-                GiveVendedores(data);
-                return false;
-            }
-        });
-        return false;
-    }
-
-    function GiveVendedores(data) {
-        var dataArray = [
-            ['Vendedor', 'TotalVendas']
-        ];
-        $.each(data, function (i, item) {
-            dataArray.push([item.vendedor, item.totalVendas]);
-        });
-        var data = google.visualization.arrayToDataTable(dataArray);
-
-        var options = {
-            'width': 360,
-            'height': 300,
-            'backgroundColor': 'transparent',
-            'legend': { 'position': 'left' }
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('chart-pedidosFaturadosNaoFaturados'));
-        chart.draw(data, options);
-
-        var options = {
-            'title': 'Total de faturamento semanal',
-            'titleTextStyle': { 'fontSize': 14 },
-            'width': 360,
-            'height': 300,
-            'backgroundColor': 'transparent'
-        };
-
-        var chart = new google.visualization.ColumnChart(document.getElementById('columnChart_div'));
-        chart.draw(data, options);
-        return false;
-    } ------------------------------------------------------------------------------------------------*/
-
-    var totalEmitidos = 0;
-    var totalFaturados = 0;
-
-    var daniel = 0;
-    var lucas = 0;
-    var matheus = 0;
-    var gessika = 0;
-    var deyze = 0;
+    let GetVendedoresApi = 'Dashboard/GetVendedores';
 
     $(function () {
 
@@ -139,34 +43,18 @@ $(document).ready(function () {
         });
         $('input.switch').click(function () {
             if ($('#chart-vendedores-dia').is(":checked")) {
-                daniel = 25;
-                lucas = 22;
-                matheus = 18;
-                gessika = 15;
-                deyze = 11;
+                GetVendedoresApi = 'Dashboard/GetVendedoresSemana';
                 drawChart();
             }
             else if ($('#chart-vendedores-semana').is(":checked")) {
-                daniel = 225;
-                lucas = 222;
-                matheus = 128;
-                gessika = 125;
-                deyze = 111;
+                GetVendedoresApi = 'Dashboard/GetVendedoresSemana';
                 drawChart();
             } else if ($('#chart-vendedores-mes').is(":checked")) {
-                daniel = 2125;
-                lucas = 2122;
-                matheus = 1428;
-                gessika = 1125;
-                deyze = 1108;
+                GetVendedoresApi = 'Dashboard/GetVendedores';
                 drawChart();
             }
             else {
-                daniel = 25;
-                lucas = 22;
-                matheus = 18;
-                gessika = 15;
-                deyze = 11;
+                GetVendedoresApi = 'Dashboard/GetVendedores';
                 drawChart();
             }
         });
@@ -182,6 +70,31 @@ $(document).ready(function () {
     // instantiates the pie chart, passes in the data and
     // draws it.
     function drawChart() {
+
+        $.ajax({
+            url: GetVendedoresApi,
+            dataType: "json",
+            type: "GET",
+            error: function (xhr, status, error) {
+                var err = eval(" (" + xhr.responseText + ") ");
+                //toast.error(err.message);
+            },
+            success: function (data) {
+                //$('.block').html("Requisição concluída...");
+                GiveVendedores(data);
+                return false;
+            }
+        });
+        return false;
+    }
+
+    function GiveVendedores(data) {
+        const dataArray = [
+            ['Vendedor', 'TotalVendas']
+        ];
+        $.each(data, function (i, item) {
+            dataArray.push([item.vendedor, item.totalVendas]);
+        });
 
         // Create the data table.
         var data = google.visualization.arrayToDataTable([
@@ -203,14 +116,7 @@ $(document).ready(function () {
         chart.draw(data, options);
 
         // Create the data table.
-        var dataColumn = google.visualization.arrayToDataTable([
-            ['Vendedor', 'Valor'],
-            ['Daniel', daniel],
-            ['Lucas', lucas],
-            ['Matheus', matheus],
-            ['Gessika', gessika],
-            ['Deyze', deyze],
-        ]);
+        var dataColumn = google.visualization.arrayToDataTable(dataArray);
 
         // Set chart options
         var options = {
@@ -224,6 +130,9 @@ $(document).ready(function () {
         var chart = new google.visualization.PieChart(document.getElementById('chart-top5Vendedores'));
         chart.draw(dataColumn, options);
     }
+
+
+
     //Animação toggle informar intervalo de datas----------------------------------------------------------------------------------------------------
     var theToggle = document.getElementById('toggle');
 

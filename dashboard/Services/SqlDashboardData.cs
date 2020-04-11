@@ -19,20 +19,20 @@ namespace dashboard.Services
 
         public int GetPedidosNaoFaturados()
         {
-            return db.pedidos.Where(pedido => pedido.IdNfe == 0).Count();
+            return db.pedido.Where(pedido => pedido.Id == 0).Count();
         }
 
-        public IEnumerable<MovimGimViewModel> GetVendedores()
+        public IEnumerable<MovimentacaoViewModel> GetVendedores()
         {
-            return db.MovimGim.
-                            Join(db.VendedorGim, movimentacoes => movimentacoes.SqlMcodven,
-                                vendedores => vendedores.SqlVcodven,
-                            (movimentacoes, vendedores) => new MovimGimViewModel
+            return db.pedido.
+                            Join(db.vendedor, pedido => pedido.IdVendedor,
+                                vendedor => vendedor.Id,
+                            (pedido, vendedor) => new MovimentacaoViewModel
                             {
-                                NomeVendedor = vendedores.SqlVnompt1,
-                                IdVendedor = vendedores.SqlVcodven,
-                                IdMovimentacaoVendedor = movimentacoes.SqlMcodven,
-                                ValorMovimentacao = movimentacoes.SqlMvalmov
+                                NomeVendedor = vendedor.Nome,
+                                IdVendedor = vendedor.Id,
+                                IdPedidoVendedor = pedido.IdVendedor,
+                                ValorPedido = pedido.Valor
 
                             }).ToList();
         }
@@ -42,12 +42,12 @@ namespace dashboard.Services
             var movimentacoes = GetVendedores();
 
             var somaVendas = from vendedor in movimentacoes
-                             orderby vendedor.ValorMovimentacao
+                             orderby vendedor.ValorPedido
                              group vendedor by vendedor.NomeVendedor into vendedorGroup
                              select new VendedoresViewModel
                              {
                                  Vendedor = vendedorGroup.Key,
-                                 TotalVendas = vendedorGroup.Sum(x => x.ValorMovimentacao)
+                                 TotalVendas = vendedorGroup.Sum(x => x.ValorPedido)
                              };
             return somaVendas;
         }
@@ -57,12 +57,12 @@ namespace dashboard.Services
             var movimentacoes = GetVendedores();
 
             var somaVendas = from vendedor in movimentacoes
-                             orderby vendedor.ValorMovimentacao
+                             orderby vendedor.ValorPedido
                              group vendedor by vendedor.NomeVendedor into vendedorGroup
                              select new VendedoresViewModel
                              {
                                  Vendedor = vendedorGroup.Key,
-                                 TotalVendas = vendedorGroup.Sum(x => x.ValorMovimentacao / 5)
+                                 TotalVendas = vendedorGroup.Sum(x => x.ValorPedido/ 5)
                              };
             return somaVendas;
         }

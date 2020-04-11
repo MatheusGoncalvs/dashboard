@@ -1,4 +1,5 @@
 ﻿using System;
+using dashboard.Migrations;
 using dashboard.Data;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +21,8 @@ namespace dashboard.Models
 
         public virtual DbSet<VendedorGim> VendedorGim { get; set; }
 
-        public virtual DbSet<Pedido> pedidos { get; set; }
+        public virtual DbSet<Vendedor> vendedor { get; set; }
+        public virtual DbSet<Pedido> pedido { get; set; }
 
         // Unable to generate entity type for table 'dbo.ZLog_Pedidos_Gim'. Please see the warning messages.
 

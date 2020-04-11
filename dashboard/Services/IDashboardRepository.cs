@@ -10,7 +10,7 @@ namespace dashboard.Services
 {
     public interface IDashboardRepository
     {
-        IEnumerable<MovimGimViewModel> GetVendedores();
+        IEnumerable<MovimentacaoViewModel> GetVendedores();
 
         IEnumerable<VendedoresViewModel> SomaPorGrupos();
 

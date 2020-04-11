@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "1b340648a09944b9dc7903847a25f95e4f099d38"
+    "signature": "370e108227e056c3720c3b218f141c5790c435b6"
   },
   "compilationOptions": {
     "defines": [
@@ -27,7 +27,8 @@
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
-          "OdeToCode.UseNodeModules": "1.0.6"
+          "OdeToCode.UseNodeModules": "1.0.6",
+          "SendGrid": "9.13.2"
         },
         "runtime": {
           "dashboard.dll": {}
@@ -51,6 +52,20 @@
         },
         "compile": {
           "lib/netstandard2.0/OdeToCode.UseNodeModules.dll": {}
+        }
+      },
+      "SendGrid/9.13.2": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {
+            "assemblyVersion": "9.13.2.0",
+            "fileVersion": "9.13.2.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3261,6 +3276,13 @@
       "sha512": "sha512-mE838R7RdMaQ3csLrWMCeeG8UtL5jdfEFlYjRTit6EfOTB17sLoV/tmNdAXl59ht0Rcb+9m3t9rqyC7gVEz21A==",
       "path": "odetocode.usenodemodules/1.0.6",
       "hashPath": "odetocode.usenodemodules.1.0.6.nupkg.sha512"
+    },
+    "SendGrid/9.13.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wtdeav+dxC9jGEH0NQxT8IEEs39OEvyN4MS05eLyGXo6Uors7syA/SghrLZUcAnXjRHN0ay25Z2UgI/KFlxTZQ==",
+      "path": "sendgrid/9.13.2",
+      "hashPath": "sendgrid.9.13.2.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",

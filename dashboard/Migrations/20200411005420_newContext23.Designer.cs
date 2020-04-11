@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using dashboard.Models;
 
 namespace dashboard.Migrations
 {
     [DbContext(typeof(SOFCONContext))]
-    partial class SOFCONContextModelSnapshot : ModelSnapshot
+    [Migration("20200411005420_newContext23")]
+    partial class newContext23
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

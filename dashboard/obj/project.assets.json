@@ -2989,6 +2989,18 @@
           }
         }
       },
+      "SendGrid/9.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {}
+        }
+      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -7698,6 +7710,26 @@
         "version.txt"
       ]
     },
+    "SendGrid/9.13.2": {
+      "sha512": "wtdeav+dxC9jGEH0NQxT8IEEs39OEvyN4MS05eLyGXo6Uors7syA/SghrLZUcAnXjRHN0ay25Z2UgI/KFlxTZQ==",
+      "type": "package",
+      "path": "sendgrid/9.13.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/SendGrid.dll",
+        "lib/net452/SendGrid.pdb",
+        "lib/net452/SendGrid.xml",
+        "lib/netstandard1.3/SendGrid.dll",
+        "lib/netstandard1.3/SendGrid.pdb",
+        "lib/netstandard1.3/SendGrid.xml",
+        "lib/netstandard2.0/SendGrid.dll",
+        "lib/netstandard2.0/SendGrid.pdb",
+        "lib/netstandard2.0/SendGrid.xml",
+        "sendgrid.9.13.2.nupkg.sha512",
+        "sendgrid.nuspec"
+      ]
+    },
     "System.AppContext/4.3.0": {
       "sha512": "fKC+rmaLfeIzUhagxY17Q9siv/sPrjjKcfNg1Ic8IlQkZLipo8ljcaZQu4VtI4Jqbzjc2VTjzGLF6WmsRXAEgA==",
       "type": "package",
@@ -12103,7 +12135,8 @@
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
-      "OdeToCode.UseNodeModules >= 1.0.6"
+      "OdeToCode.UseNodeModules >= 1.0.6",
+      "SendGrid >= 9.13.2"
     ]
   },
   "packageFolders": {
@@ -12170,6 +12203,10 @@
           "OdeToCode.UseNodeModules": {
             "target": "Package",
             "version": "[1.0.6, )"
+          },
+          "SendGrid": {
+            "target": "Package",
+            "version": "[9.13.2, )"
           }
         },
         "imports": [

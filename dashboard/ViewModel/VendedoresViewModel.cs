@@ -9,6 +9,6 @@ namespace dashboard.ViewModel
     public class VendedoresViewModel
     {
         public string Vendedor { get; set; }
-        public decimal TotalVendas { get; set; }
+        public double TotalVendas { get; set; }
     }
 }
