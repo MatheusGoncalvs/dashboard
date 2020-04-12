@@ -2961,11 +2961,6 @@
   "RootNamespace": "dashboard",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Teu\\source\\repos\\dashboard\\dashboard\\Views\\Dashboard\\Dashboard.cshtml",
-      "TargetPath": "Views\\Dashboard\\Dashboard.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Teu\\source\\repos\\dashboard\\dashboard\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -2978,11 +2973,6 @@
     {
       "FilePath": "c:\\Users\\Teu\\source\\repos\\dashboard\\dashboard\\Views\\Shared\\_LoginPartial.cshtml",
       "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Teu\\source\\repos\\dashboard\\dashboard\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3011,11 +3001,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Teu\\source\\repos\\dashboard\\dashboard\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Teu\\source\\repos\\dashboard\\dashboard\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -3023,11 +3008,6 @@
     {
       "FilePath": "c:\\Users\\Teu\\source\\repos\\dashboard\\dashboard\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Teu\\source\\repos\\dashboard\\dashboard\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"
     }
   ],

@@ -10,13 +10,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using dashboard.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using dashboard.Services;
-using dashboard.Models;
-using dashboard.Data;
-using dashboard.Areas.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace dashboard
 {
@@ -39,28 +35,12 @@ namespace dashboard
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<SOFCONContext>(options =>
+            services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddDefaultIdentity<ApplicationUser>(
-                options =>
-                {
-                    options.Password.RequireNonAlphanumeric = false;
-                    options.Password.RequireUppercase = false;
-                    options.Password.RequiredUniqueChars = 0;
-
-                    options.SignIn.RequireConfirmedEmail = false;
-                })
+            services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
-                .AddEntityFrameworkStores<SOFCONContext>();
-
-            services.AddScoped<IDashboardRepository, SqlDashboardData>();
-
-            services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>,
-                ApplicationUserClaimsPrincipalFactory>();
-
-            services.AddTransient<IEmailSender, EmailSender>();
+                .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -82,7 +62,6 @@ namespace dashboard
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseNodeModules(env);
             app.UseCookiePolicy();
 
             app.UseAuthentication();

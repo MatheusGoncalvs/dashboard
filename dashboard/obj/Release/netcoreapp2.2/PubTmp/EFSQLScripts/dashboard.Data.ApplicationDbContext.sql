@@ -172,22 +172,10 @@ END;
 
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200215192744_notasMigrations')
-BEGIN
-    CREATE TABLE [notas] (
-        [Id] int NOT NULL IDENTITY,
-        [Nome] nvarchar(max) NULL,
-        [Valor] real NOT NULL,
-        CONSTRAINT [PK_notas] PRIMARY KEY ([Id])
-    );
-END;
-
-GO
-
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200215192744_notasMigrations')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200412190650_initialMigration')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20200215192744_notasMigrations', N'2.2.6-servicing-10079');
+    VALUES (N'20200412190650_initialMigration', N'2.2.6-servicing-10079');
 END;
 
 GO

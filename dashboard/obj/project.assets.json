@@ -2746,21 +2746,6 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
-      "OdeToCode.UseNodeModules/1.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNetCore.Hosting.Abstractions": "2.0.2",
-          "Microsoft.AspNetCore.Http.Abstractions": "2.0.2",
-          "Microsoft.AspNetCore.StaticFiles": "2.0.2",
-          "Microsoft.Extensions.FileProviders.Physical": "2.0.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/OdeToCode.UseNodeModules.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/OdeToCode.UseNodeModules.dll": {}
-        }
-      },
       "Remotion.Linq/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -2987,18 +2972,6 @@
             "assetType": "native",
             "rid": "win-x86"
           }
-        }
-      },
-      "SendGrid/9.13.2": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "9.0.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/SendGrid.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/SendGrid.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -7407,19 +7380,6 @@
         "newtonsoft.json.bson.nuspec"
       ]
     },
-    "OdeToCode.UseNodeModules/1.0.6": {
-      "sha512": "mE838R7RdMaQ3csLrWMCeeG8UtL5jdfEFlYjRTit6EfOTB17sLoV/tmNdAXl59ht0Rcb+9m3t9rqyC7gVEz21A==",
-      "type": "package",
-      "path": "odetocode.usenodemodules/1.0.6",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net461/OdeToCode.UseNodeModules.dll",
-        "lib/netstandard2.0/OdeToCode.UseNodeModules.dll",
-        "odetocode.usenodemodules.1.0.6.nupkg.sha512",
-        "odetocode.usenodemodules.nuspec"
-      ]
-    },
     "Remotion.Linq/2.2.0": {
       "sha512": "fK/76UmpC0FXBlGDFVPLJHQlDLYnGC+XY3eoDgCgbtrhi0vzbXDQ3n/IYHhqSKqXQfGw/u04A1drWs7rFVkRjw==",
       "type": "package",
@@ -7708,26 +7668,6 @@
         "runtimes/win-x86/native/sni.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
-      ]
-    },
-    "SendGrid/9.13.2": {
-      "sha512": "wtdeav+dxC9jGEH0NQxT8IEEs39OEvyN4MS05eLyGXo6Uors7syA/SghrLZUcAnXjRHN0ay25Z2UgI/KFlxTZQ==",
-      "type": "package",
-      "path": "sendgrid/9.13.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net452/SendGrid.dll",
-        "lib/net452/SendGrid.pdb",
-        "lib/net452/SendGrid.xml",
-        "lib/netstandard1.3/SendGrid.dll",
-        "lib/netstandard1.3/SendGrid.pdb",
-        "lib/netstandard1.3/SendGrid.xml",
-        "lib/netstandard2.0/SendGrid.dll",
-        "lib/netstandard2.0/SendGrid.pdb",
-        "lib/netstandard2.0/SendGrid.xml",
-        "sendgrid.9.13.2.nupkg.sha512",
-        "sendgrid.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -12134,9 +12074,7 @@
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
-      "Microsoft.NETCore.App >= 2.2.0",
-      "OdeToCode.UseNodeModules >= 1.0.6",
-      "SendGrid >= 9.13.2"
+      "Microsoft.NETCore.App >= 2.2.0"
     ]
   },
   "packageFolders": {
@@ -12199,14 +12137,6 @@
             "target": "Package",
             "version": "[2.2.0, )",
             "autoReferenced": true
-          },
-          "OdeToCode.UseNodeModules": {
-            "target": "Package",
-            "version": "[1.0.6, )"
-          },
-          "SendGrid": {
-            "target": "Package",
-            "version": "[9.13.2, )"
           }
         },
         "imports": [

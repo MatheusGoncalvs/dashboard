@@ -19,12 +19,12 @@ using dashboard;
 #line default
 #line hidden
 #line 2 "C:\Users\Teu\source\repos\dashboard\dashboard\Views\_ViewImports.cshtml"
-using dashboard.Areas.Identity.Pages.Account;
+using dashboard.Models;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2c4d95578225cd45bcb2d8e8adeb29bc8ac7eda4", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1f5b35262d8c71d2234cd4416df7370360c37aa5", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

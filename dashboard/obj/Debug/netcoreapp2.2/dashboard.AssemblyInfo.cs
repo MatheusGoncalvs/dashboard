@@ -11,7 +11,7 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-dashboard-4DF5D204-9140-4895-91C6-5AAC5581B118")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-dashboard-C9D1AE8E-61D1-44B2-97DB-35EAFA20AAEF")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("dashboard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

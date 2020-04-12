@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <UserSecretsId>aspnet-dashboard-4DF5D204-9140-4895-91C6-5AAC5581B118</UserSecretsId>
+    <UserSecretsId>aspnet-dashboard-C9D1AE8E-61D1-44B2-97DB-35EAFA20AAEF</UserSecretsId>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
@@ -10,14 +10,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="OdeToCode.UseNodeModules" Version="1.0.6" />
-    <PackageReference Include="SendGrid" Version="9.13.2" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <Folder Include="Data\Entities\" />
-    <Folder Include="Data\Migrations\" />
   </ItemGroup>
 
 </Project>

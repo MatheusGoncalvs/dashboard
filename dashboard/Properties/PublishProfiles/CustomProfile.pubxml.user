@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkRHE+gnE4kKHep7Jm+1tJAAAAAACAAAAAAAQZgAAAAEAACAAAADbFkAeLrzDPCJgtZK2hoR2vDOkQnMAaAMndlDgPtgEGQAAAAAOgAAAAAIAACAAAADgGU/eZbAD7v6vI1yeoJP0FqLre8iogbi2x9a9w4CXPyAAAACFqaTnUmfU9aSl2Ugtau6IJAEGMC9Xx0Vmi3RHJ5swIkAAAAA1FuxF0ubuVxizTfNHnnCjkdRyzR7izrzhypBn9ZnFMvhzGavPSejc+bLeYu4NxZ7D+VeqE+WDGIiUd/o+A0ze</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=SQL5047.site4now.net%3bInitial Catalog=DB_A57EC3_dashboardpro%3bUser Id=DB_A57EC3_dashboardpro_admin%3bPassword=71opjfmt%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="dashboard.Data.ApplicationDbContext">
+      <Value>Data Source=SQL5047.site4now.net%3bInitial Catalog=DB_A57EC3_dashboardpro%3bUser Id=DB_A57EC3_dashboardpro_admin%3bPassword=71opjfmt%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

@@ -2,217 +2,55 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-    white-space: normal;
-    text-align: center;
-    word-break: break-all;
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-    font-size: 14px;
+  font-size: 14px;
 }
-
 @media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
+  html {
+    font-size: 16px;
+  }
 }
 
 .border-top {
-    border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
 }
-
 .border-bottom {
-    border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy {
-    font-size: 1rem;
-    line-height: inherit;
+  font-size: 1rem;
+  line-height: inherit;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-    position: relative;
-    min-height: 100%;
+  position: relative;
+  min-height: 100%;
 }
 
 body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
 }
-
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    white-space: nowrap;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    line-height: 60px; /* Vertically center the text there */
-}
-
-.block {
-    background-color: #e5e5e5;
-    margin: 5px 0;
-}
-
-.align-divs-center {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.btn--group {
-    float: right;
-    padding: 0 50px;
-}
-
-.bg-btns-area {
-    background-color: rgba(0, 0, 0, .05);
-    border-radius: 60px;
-    width: 80%;
-}
-
-.btn-vendedor {
-    visibility: hidden;
-    position: absolute;
-}
-
-    .btn-vendedor + label {
-        display: block;
-        position: relative;
-        cursor: pointer;
-        outline: none;
-        user-select: none;
-    }
-
-.btn-vendedor-bg + label {
-    color: #333;
-    width: 80%;
-    height: 30px;
-    border-radius: 60px;
-}
-
-.btn-vendedor-mes-bg + label:before,
-.btn-vendedor-mes-bg + label:after {
-    display: block;
-    position: absolute;
-    top: 3px;
-    left: -207px;
-    bottom: 0px;
-    content: "";
-}
-
-.btn-vendedor-mes-bg + label:after {
-    background-color: white;
-    width: 130px;
-    border-radius: 10px;
-    margin: 2px 0 2px 3px;
-    transition: all 0.4s;
-}
-
-.btn-vendedor-mes-bg:checked + label:after {
-    transform: translateX(153px);
-}
-
-.btn-vendedor-semana-bg:checked + label:after {
-    transform: translateX(-130px);
-}
-
-.btn-date h3 {
-    margin: 0;
-    font-size: 14px;
-    
-}
-
-.bottom-block {
-    background-color: rgba(0, 0, 0, .05);
-    width: 100%;
-}
-
-    .bottom-block h1 {
-        text-align: center;
-        font-size: 16px;
-        font-weight: bold;
-        padding: 10px 0px;
-    }
-
-    .bottom-block h2 {
-        text-align: center;
-        font-size: 14px;
-        padding: 0px 0px;
-    }
-
-    .bottom-block .separator-collum {
-        border-right: 1px solid #e5e5e5;
-    }
-
-.align-chart-center {
-    display: block;
-    margin: 0 auto;
-}
-
-.loader {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background: url("../imagens/cube-loader.gif") 50% 50% no-repeat white;
-}
-
-.msg-tela-pequena-smartphone {
-    display: none;
-}
-
-#section-comercial {
-    display: none;
-}
-
-.chartSmallPier_div {
-    display: none;
-}
-
-.chartSmallPizza_div {
-    display: none;
-}
-
-.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-@media (max-width: 320px) {
-
-    .chartSmallPier_div {
-        display: block;
-    }
-
-    .chartSmallPizza_div {
-        display: block;
-    }
-
-    .chart_div {
-        display: none;
-    }
-
-    .columnChart_div {
-        display: none;
-    }
-}
-
-@media (min-width: 600px) {
-    .block {
-        border: 1px solid white;
-    }
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
 }
