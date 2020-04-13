@@ -13,6 +13,9 @@ using Microsoft.EntityFrameworkCore;
 using dashboard.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using System.Security.Claims;
+using dashboard.Services;
 
 namespace dashboard
 {
@@ -38,9 +41,15 @@ namespace dashboard
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            /* services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>,
+                ApplicationUserClaimsPrincipalFactory>(); */
+
+            services.AddScoped<IDashboardRepository, DashboardRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -63,6 +72,8 @@ namespace dashboard
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseNodeModules(env);
 
             app.UseAuthentication();
 

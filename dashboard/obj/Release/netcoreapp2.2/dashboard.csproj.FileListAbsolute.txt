@@ -30,3 +30,4 @@ C:\Users\Teu\source\repos\dashboard\dashboard\obj\Release\netcoreapp2.2\dashboar
 C:\Users\Teu\source\repos\dashboard\dashboard\obj\Release\netcoreapp2.2\dashboard.dll
 C:\Users\Teu\source\repos\dashboard\dashboard\obj\Release\netcoreapp2.2\dashboard.pdb
 C:\Users\Teu\source\repos\dashboard\dashboard\obj\Release\netcoreapp2.2\dashboard.csproj.CopyComplete
+C:\Users\Teu\source\repos\dashboard\dashboard\obj\Release\netcoreapp2.2\Razor\Views\Dashboard\Dashboard.g.cshtml.cs

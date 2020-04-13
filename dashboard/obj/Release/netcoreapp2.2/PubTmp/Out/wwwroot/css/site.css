@@ -1,56 +1,398 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+
+a, a:hover, a:visited :active:active {
+    color: #333;
+    text-decoration: none;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+h4 {
+    font-size: 22px;
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+    font-size: 1rem;
+    line-height: inherit;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    font-family: 'Roboto', 'Arial', 'Times New Roman';
+    margin-bottom: 60px;
+    background-color: #e5e5e5;
+    --switch-selected-border-color: #fff;
+    --texto-claro: #fff;
 }
+
+h2 {
+    font-size: 18px;
+}
+
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    height: 60px;
+    line-height: 60px;
 }
+/*Tela de Login --------------------------------------------------------------------------------------------------------------------------*/
+
+.content {
+    margin-top: 100px;
+    padding-left: 17px;
+}
+
+    .content input[type=text], [type=password] {
+        width: 300px;
+    }
+
+.titulo-bloco {
+    margin-bottom: 50px;
+    padding-left: 15px;
+}
+
+.esqueci-a-senha {
+    margin-top: 20px;
+}
+
+.icon {
+    float: left;
+    padding-top: 7px;
+    padding-right: 5px;
+    color: var(--texto-claro);
+}
+/*Secao comercial --------------------------------------------------------------------------------------------------------------------------*/
+.block-bg {
+    background-color: white;
+}
+
+#displayData {
+    padding-left: 30px;
+    padding-top: 5px;
+}
+
+.icon-calendar-title {
+    font-size: 22px;
+}
+
+.block-title-dashboard {
+    display: flex;
+    height: 50px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+    .block-title-dashboard h2 {
+        margin: 0;
+    }
+
+.block {
+    background-color: #fff;
+    margin: 5px 0;
+    min-width: 344px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.title-block {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.txt-ultima-atualizacao h2 {
+    font-size: 12px;
+}
+
+.txt-ultima-atualizacao i {
+    float: left;
+    padding-right: 5px;
+}
+
+.middle-block {
+    margin-top: 15px;
+}
+
+.col-1-faturamento-block {
+    float: left;
+}
+
+.col-2-faturamento-block {
+    text-align: right;
+}
+
+.align-divs-center {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-switch {
+    background-color: #e5e5e5;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input + label {
+    margin-right: 35px;
+}
+
+.switch {
+    visibility: hidden;
+    position: absolute;
+}
+
+    .switch + label {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        user-select: none;
+    }
+/*First chart button*/
+.selected-switch-dia + label:after {
+    display: none;
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 40px;
+    border: 2px solid var(--switch-selected-border-color);
+    background: transparent;
+    border-radius: 10px;
+    top: -7px;
+    left: -30px;
+}
+
+.selected-switch-dia:checked + label:after {
+    display: block;
+}
+
+.selected-switch-semana + label:after {
+    display: none;
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 40px;
+    border: 2px solid var(--switch-selected-border-color);
+    background: transparent;
+    border-radius: 10px;
+    top: -7px;
+    left: -10px;
+}
+
+.selected-switch-semana:checked + label:after {
+    display: block;
+}
+
+.selected-switch-mes + label:after {
+    display: none;
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 40px;
+    border: 2px solid var(--switch-selected-border-color);
+    background: transparent;
+    border-radius: 10px;
+    top: -7px;
+    left: -25px;
+}
+
+.selected-switch-mes:checked + label:after {
+    display: block;
+}
+
+/* Second chart button*/
+.selected-switch-vendedores-dia + label:after {
+    display: none;
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 40px;
+    border: 2px solid var(--switch-selected-border-color);
+    background: transparent;
+    border-radius: 10px;
+    top: -7px;
+    left: -30px;
+}
+
+.selected-switch-vendedores-dia:checked + label:after {
+    display: block;
+}
+
+.selected-switch-vendedores-semana + label:after {
+    display: none;
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 40px;
+    border: 2px solid var(--switch-selected-border-color);
+    background: transparent;
+    border-radius: 10px;
+    top: -7px;
+    left: -10px;
+}
+
+.selected-switch-vendedores-semana:checked + label:after {
+    display: block;
+}
+
+.selected-switch-vendedores-mes + label:after {
+    display: none;
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 40px;
+    border: 2px solid var(--switch-selected-border-color);
+    background: transparent;
+    border-radius: 10px;
+    top: -7px;
+    left: -25px;
+}
+
+.selected-switch-vendedores-mes:checked + label:after {
+    display: block;
+}
+
+.btn-date h3 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.bottom-block {
+    background-color: rgba(0, 0, 0, .05);
+    width: 100%;
+}
+
+    .bottom-block h1 {
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 0px;
+    }
+
+    .bottom-block h2 {
+        text-align: center;
+        font-size: 14px;
+        padding: 0px 0px;
+    }
+
+    .bottom-block .separator-collum {
+        border-right: 1px solid #e5e5e5;
+    }
+
+.align-chart-center {
+    display: block;
+    margin: 0 auto;
+}
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url("../imagens/cube-loader.gif") 50% 50% no-repeat white;
+}
+
+#section-comercial {
+    display: none;
+}
+
+.chartSmallPier_div {
+    display: none;
+}
+
+.chartSmallPizza_div {
+    display: none;
+}
+
+@media (max-width: 320px) {
+
+    .chartSmallPier_div {
+        display: block;
+    }
+
+    .chartSmallPizza_div {
+        display: block;
+    }
+
+    .chart_div {
+        display: none;
+    }
+
+    .columnChart_div {
+        display: none;
+    }
+}
+
+@media (min-width: 600px) {
+    .block {
+        border: 1px solid #e5e5e5;
+    }
+}
+/*--Animação Toggle informar data inicial e final--------------------------------------------------------------------------------------------------*/
+/* Important styles */
+
+#toggle.on + #menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* menu appearance*/
+#menu {
+    position: relative;
+    color: #e5e5e5;
+    width: 200px;
+    padding: 10px;
+    margin: auto;
+    border-radius: 4px;
+    background: #333;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+    font-size: 14px;
+    /* just for this demo */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s;
+    z-index: 1;
+}
+
+    #menu:after {
+        position: absolute;
+        top: -15px;
+        left: 95px;
+        content: "";
+        display: block;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        z-index: 1;
+    }

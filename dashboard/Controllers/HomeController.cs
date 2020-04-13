@@ -12,7 +12,7 @@ namespace dashboard.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Dashboard", "Dashboard");
         }
 
         public IActionResult Privacy()

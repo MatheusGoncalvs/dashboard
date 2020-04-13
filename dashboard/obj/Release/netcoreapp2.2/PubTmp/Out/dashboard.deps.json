@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    "signature": "1b340648a09944b9dc7903847a25f95e4f099d38"
   },
   "compilationOptions": {
     "defines": [
@@ -25,13 +25,31 @@
       "dashboard/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.App": "2.2.0",
-          "Microsoft.NETCore.App": "2.2.0"
+          "Microsoft.NETCore.App": "2.2.0",
+          "OdeToCode.UseNodeModules": "1.0.6"
         },
         "runtime": {
           "dashboard.dll": {}
         },
         "compile": {
           "dashboard.dll": {}
+        }
+      },
+      "OdeToCode.UseNodeModules/1.0.6": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.StaticFiles": "2.2.0",
+          "Microsoft.Extensions.FileProviders.Physical": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/OdeToCode.UseNodeModules.dll": {
+            "assemblyVersion": "1.0.6.0",
+            "fileVersion": "1.0.6.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/OdeToCode.UseNodeModules.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3230,6 +3248,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "OdeToCode.UseNodeModules/1.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mE838R7RdMaQ3csLrWMCeeG8UtL5jdfEFlYjRTit6EfOTB17sLoV/tmNdAXl59ht0Rcb+9m3t9rqyC7gVEz21A==",
+      "path": "odetocode.usenodemodules/1.0.6",
+      "hashPath": "odetocode.usenodemodules.1.0.6.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",

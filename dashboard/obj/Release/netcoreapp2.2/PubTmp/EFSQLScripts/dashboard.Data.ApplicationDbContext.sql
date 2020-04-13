@@ -180,3 +180,54 @@ END;
 
 GO
 
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200412205629_addClaimNomeCompleto')
+BEGIN
+    ALTER TABLE [AspNetUsers] ADD [NomeCompleto] nvarchar(max) NULL;
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200412205629_addClaimNomeCompleto')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200412205629_addClaimNomeCompleto', N'2.2.6-servicing-10079');
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200412224915_allChanges')
+BEGIN
+    CREATE TABLE [pedido] (
+        [Id] int NOT NULL IDENTITY,
+        [IdProduto] int NOT NULL,
+        [IdCliente] int NOT NULL,
+        [IdVendedor] int NOT NULL,
+        [Valor] float NOT NULL,
+        [Faturado] bit NOT NULL,
+        [DataPedido] datetime2 NOT NULL,
+        CONSTRAINT [PK_pedido] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200412224915_allChanges')
+BEGIN
+    CREATE TABLE [vendedor] (
+        [Id] int NOT NULL IDENTITY,
+        [Nome] nvarchar(max) NULL,
+        [Cpf] nvarchar(max) NULL,
+        CONSTRAINT [PK_vendedor] PRIMARY KEY ([Id])
+    );
+END;
+
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20200412224915_allChanges')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20200412224915_allChanges', N'2.2.6-servicing-10079');
+END;
+
+GO
+
