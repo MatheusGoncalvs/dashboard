@@ -121,7 +121,11 @@ $(document).ready(function () {
                     //$('.block').html("Requisição concluída...");
                     GiveVendedores(data);
                     $("#toggle").removeClass("on");
-                    $('#displayData').html(dataInicial + " a " + dataFinal);
+                    $('#displayData').html(
+                        dataInicial.replace(/(\d*)-(\d*)-(\d*).*/, '$3-$2-$1') +
+                        " a " + 
+                        dataFinal.replace(/(\d*)-(\d*)-(\d*).*/, '$3-$2-$1')
+                    );
                     return false;
                 }
             });
