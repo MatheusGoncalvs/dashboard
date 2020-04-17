@@ -17,9 +17,27 @@ namespace dashboard.Services
             this.db = db;
         }
 
-        public int GetPedidosNaoFaturados()
+        public int GetPedidosEmitidos(DateTime dataInicial, DateTime dataFinal)
         {
-            return db.pedido.Where(pedido => pedido.Id == 0).Count();
+            return db.pedido.Where(
+                pedido => pedido.Id >= 0 && pedido.DataPedido >= dataInicial && pedido.DataPedido <= dataFinal
+                ).Count();
+        }
+
+        public int GetPedidosFaturados(DateTime dataInicial, DateTime dataFinal)
+        {
+            return db.pedido.Where(
+                pedido => pedido.Faturado == true && pedido.DataPedido >= dataInicial && pedido.DataPedido <= dataFinal
+                ).Count();
+        }
+
+        public PedidosFaturadosEmitidosViewModel GetPedidosEmitidosxFaturados(DateTime dataInicial, DateTime dataFinal)
+        {
+            PedidosFaturadosEmitidosViewModel pedido = new PedidosFaturadosEmitidosViewModel();
+            pedido.Faturados = GetPedidosFaturados(dataInicial, dataFinal);
+            pedido.Emitidos = GetPedidosEmitidos(dataInicial, dataFinal);
+
+            return pedido;
         }
 
         public IEnumerable<MovimentacaoViewModel> GetVendedores()
@@ -37,7 +55,7 @@ namespace dashboard.Services
                             }).ToList();
         }
 
-        public IEnumerable<VendedoresViewModel> SomaPorGrupos(DateTime dataInicial, DateTime dataFinal)
+        public IEnumerable<VendedoresViewModel> GetTotalVendasPorVendedor(DateTime dataInicial, DateTime dataFinal)
         {
             var movimentacoes = GetVendedores();
 
@@ -51,6 +69,18 @@ namespace dashboard.Services
                                  TotalVendas = vendedorGroup.Sum(x => x.ValorPedido)
                              };
             return somaVendas;
+        }
+
+        public IEnumerable<DashboardViewModel> GetData(DateTime dataInicial, DateTime dataFinal)
+        {
+            DashboardViewModel dados = new DashboardViewModel();
+            dados.Pedidos = GetPedidosEmitidosxFaturados(dataInicial, dataFinal);
+            dados.Vendedores = GetTotalVendasPorVendedor(dataInicial, dataFinal);
+
+            List<DashboardViewModel> dadosDashboard = new List<DashboardViewModel>();
+            dadosDashboard.Add(dados);
+
+            return dadosDashboard;
         }
     }
 }

@@ -25,40 +25,26 @@ namespace dashboard.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetVendedores(DateTime dataInicial, DateTime dataFinal)
+        public IActionResult AtualizaDados()
         {
-            if (dataInicial == dataFinal)
-            {
-                dataFinal = new DateTime(3000, 12, 31, 0, 0, 0);
-            }
+            var dataInicial = new DateTime(2000, 01, 01, 0, 0, 0);
+            var dataFinal = new DateTime(3000, 12, 31, 0, 0, 0);
 
-            var vendedores = dashboardRepository.SomaPorGrupos(dataInicial, dataFinal);
+            var dados = dashboardRepository.GetData(dataInicial, dataFinal);
 
-            return Json(vendedores);
+            return Json(dados);
         }
 
         [HttpPost]
-        public IActionResult AtualizaData(DateTime DataInicial, DateTime DataFinal)
+        public IActionResult AtualizaDados(DateTime DataInicial, DateTime DataFinal)
         {
             if (DataInicial == DataFinal)
             {
                 DataFinal = new DateTime(3000, 12, 31, 0, 0, 0);
             }
 
-            var vendedores = dashboardRepository.SomaPorGrupos(DataInicial, DataFinal);
-
-            return Json(vendedores);
-        }
-
-        [HttpGet]
-        public IActionResult GetPedidosNaoFaturados()
-        {
-            var qtdPedidos = dashboardRepository.GetPedidosNaoFaturados();
-
-            PedidosNaoFaturadosViewModel pedido = new PedidosNaoFaturadosViewModel();
-            pedido.Quantidade = qtdPedidos;
-
-            return Json(pedido);
+            var dados = dashboardRepository.GetData(DataInicial, DataFinal);
+            return Json(dados);
         }
     }
 }

@@ -11,8 +11,14 @@ namespace dashboard.Services
     {
         IEnumerable<MovimentacaoViewModel> GetVendedores();
 
-        IEnumerable<VendedoresViewModel> SomaPorGrupos(DateTime dataInicial, DateTime dataFinal);
+        IEnumerable<DashboardViewModel> GetData(DateTime dataInicial, DateTime dataFinal);
 
-        int GetPedidosNaoFaturados();
+        IEnumerable<VendedoresViewModel> GetTotalVendasPorVendedor(DateTime dataInicial, DateTime dataFinal);
+
+        int GetPedidosEmitidos(DateTime dataInicial, DateTime dataFinal);
+
+        int GetPedidosFaturados(DateTime dataInicial, DateTime dataFinal);
+
+        PedidosFaturadosEmitidosViewModel GetPedidosEmitidosxFaturados(DateTime dataInicial, DateTime dataFinal);
     }
 }

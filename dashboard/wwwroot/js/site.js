@@ -25,12 +25,12 @@ $(document).ready(function () {
 
     let GetVendedoresApi = 'Dashboard/GetVendedores';
 
-    $(function () {
+    $(function RefreshButton(data) {
 
         $('input.switch').click(function () {
             if ($('#dia').is(":checked")) {
-                totalEmitidos = 20;
-                totalFaturados = 15;
+                totalEmitidos = data.Emitidos;
+                totalFaturados = data.Faturados;
                 $('#qtdPedidosNaoFaturados').html(totalEmitidos);
                 $('#qtdPedidosFaturados').html(totalFaturados);
                 drawChart();
@@ -83,7 +83,7 @@ $(document).ready(function () {
     function drawChart() {
 
         $.ajax({
-            url: GetVendedoresApi,
+            url: 'Dashboard/AtualizaDados',
             dataType: "json",
             type: "GET",
             error: function (xhr, status, error) {
@@ -92,8 +92,8 @@ $(document).ready(function () {
             },
             success: function (data) {
                 //$('.block').html("Requisição concluída...");
-                $('#displayData').html("01/01/2020 a 31/12/2020");
-                GiveVendedores(data);
+                //$('#displayData').html("01/01/2020 a 31/12/2020");
+                AtualizaDados(data);
                 return false;
             }
         });
@@ -109,7 +109,7 @@ $(document).ready(function () {
             }
 
             $.ajax({
-                url: 'Dashboard/AtualizaData',
+                url: 'Dashboard/AtualizaDados',
                 data: { "DataInicial": dataInicial, "DataFinal": dataFinal },
                 dataType: "json",
                 type: "POST",
@@ -119,11 +119,11 @@ $(document).ready(function () {
                 },
                 success: function (data) {
                     //$('.block').html("Requisição concluída...");
-                    GiveVendedores(data);
+                    AtualizaDados(data);
                     $("#toggle").removeClass("on");
                     $('#displayData').html(
                         dataInicial.replace(/(\d*)-(\d*)-(\d*).*/, '$3-$2-$1') +
-                        " a " + 
+                        " a " +
                         dataFinal.replace(/(\d*)-(\d*)-(\d*).*/, '$3-$2-$1')
                     );
                     return false;
@@ -132,37 +132,17 @@ $(document).ready(function () {
         });
     }
 
-    function GiveVendedores(data) {
+    function AtualizaDados(data) {
+
         const dataArray = [
             ['Vendedor', 'TotalVendas']
         ];
-        $.each(data, function (i, item) {
-            dataArray.push([item.vendedor, item.totalVendas]);
+        $.each(data[0].vendedores, function (i, item) {
+            dataArray.push([item['vendedor'], item['totalVendas']]);
         });
 
-        // Create the data table.
-        var data = google.visualization.arrayToDataTable([
-            ['Element', 'Total', { role: 'style' }],
-            ['Emitidos', totalEmitidos, 'gold'],
-            ['Faturados', totalFaturados, 'color: #e5e4e2'],
-        ]);
-
-        // Set chart options
-        var options = {
-            width: 330,
-            height: 300,
-            bar: { groupWidth: "95%" },
-            legend: { position: "none" },
-        };
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.ColumnChart(document.getElementById('chart-pedidosFaturadosNaoFaturados'));
-        chart.draw(data, options);
-
-        // Create the data table.
         var dataColumn = google.visualization.arrayToDataTable(dataArray);
 
-        // Set chart options
         var options = {
             width: 330,
             height: 300,
@@ -170,14 +150,29 @@ $(document).ready(function () {
             legend: { position: "right" },
         };
 
-        // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart-top5Vendedores'));
         chart.draw(dataColumn, options);
+
+        const dataArrayPedido = [
+            ['Element', 'Total', { role: 'style' }],
+            ['Faturados', parseInt(data[0].pedidos.faturados), 'green'],
+            ['Emitidos', parseInt(data[0].pedidos.emitidos), 'gold']
+        ];
+
+        var dataPedidos = google.visualization.arrayToDataTable(dataArrayPedido);
+
+        var options = {
+            width: 330,
+            height: 300,
+            bar: { groupWidth: "95%" },
+            legend: { position: "none" },
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart-pedidosFaturadosNaoFaturados'));
+        chart.draw(dataPedidos, options);
     }
 
-
-
-    //Animação toggle informar intervalo de datas----------------------------------------------------------------------------------------------------
+    //Animação toggle informar intervalo de datas-----------------------------------------------------------------
     var theToggle = document.getElementById('toggle');
 
     // based on Todd Motto functions
