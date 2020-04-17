@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="matheusgoncalvs-001-site1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Teu\\source\\repos\\dashboard\\dashboard\\obj\\Release\\netcoreapp2\.1\\win-x86\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="dashboard.Data.ApplicationDbContext" description="" value="Data Source=SQL5050.site4now.net;Initial Catalog=DB_A57EC3_dashprobelt;User Id=DB_A57EC3_dashprobelt_admin;Password=71opjfmt;" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\Teu\\source\\repos\\dashboard\\dashboard\\obj\\Release\\netcoreapp2\.1\\win-x86\\PubTmp\\EFSQLScripts\\dashboard\.Data\.ApplicationDbContext\.sql$" />
+  </parameter>
+</parameters>

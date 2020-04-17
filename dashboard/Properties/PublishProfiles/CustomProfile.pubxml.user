@@ -10,12 +10,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <DestinationConnectionStrings Include="DefaultConnection">
-      <Value>Data Source=SQL5047.site4now.net%3bInitial Catalog=DB_A57EC3_dashboardpro%3bUser Id=DB_A57EC3_dashboardpro_admin%3bPassword=71opjfmt%3b</Value>
+      <Value>Data Source=SQL5050.site4now.net%3bInitial Catalog=DB_A57EC3_dashprobelt%3bUser Id=DB_A57EC3_dashprobelt_admin%3bPassword=71opjfmt%3b</Value>
     </DestinationConnectionStrings>
   </ItemGroup>
   <ItemGroup>
     <EFMigrations Include="dashboard.Data.ApplicationDbContext">
-      <Value>Data Source=SQL5047.site4now.net%3bInitial Catalog=DB_A57EC3_dashboardpro%3bUser Id=DB_A57EC3_dashboardpro_admin%3bPassword=71opjfmt%3b</Value>
+      <Value>Data Source=SQL5050.site4now.net%3bInitial Catalog=DB_A57EC3_dashprobelt%3bUser Id=DB_A57EC3_dashprobelt_admin%3bPassword=71opjfmt%3b</Value>
     </EFMigrations>
   </ItemGroup>
 </Project>
