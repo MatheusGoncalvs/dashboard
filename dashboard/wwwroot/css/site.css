@@ -15,12 +15,19 @@ a, a:hover, a:visited :active:active {
     text-decoration: none;
 }
 
+h2 {
+    font-size: 18px;
+}
+
 h3 {
     font-size: 14px;
 }
 
 h4 {
     font-size: 22px;
+}
+h5 {
+    font-size: 12px;
 }
 
 .border-top {
@@ -48,8 +55,17 @@ body {
     --texto-claro: #fff;
 }
 
-h2 {
-    font-size: 18px;
+li.nav-item .icon {
+    float: left;
+    margin-right: 10px;
+    color: white;
+}
+li.nav-item a {
+    margin-top: -8px;
+}
+.form-inline button.btn {
+    width: auto;
+    margin-top: -8px;
 }
 
 .footer {
@@ -61,30 +77,71 @@ h2 {
     line-height: 60px;
 }
 /*Tela de Login --------------------------------------------------------------------------------------------------------------------------*/
-
-.content {
-    margin-top: 100px;
-    padding-left: 17px;
+#login {
+    background-color: white;
+    padding-top: 8rem;
+}
+.logo-login {
+    display: block;
+    margin-bottom: 60px;
+}
+.logo-login img {
+    display: block;
+    margin: 0 auto;
+}
+.title-login {
+    margin-bottom: 25px;
+}
+label {
+    display: block;
 }
 
-    .content input[type=text], [type=password] {
-        width: 300px;
-    }
-
-.titulo-bloco {
-    margin-bottom: 50px;
-    padding-left: 15px;
+label.password a {
+    position: relative;
+    float: right;
+}
+.btn {
+    width: 100%;
+}
+.btn-primario {
+    color: #FFF;
+    background-color: #99CC00;
+    border-color: transparent;
+}
+hr{
+    display: block;
+}
+hr.linha-divisora {
+    text-align: center;
+    margin: 50px 0;
+    color: #6e6d7a;
+    border-top: 1px solid #e0e0e0;
+}
+hr.linha-divisora::after {
+    content: "Ou";
+    position: relative;
+    top: -9px;
+    padding: 0 15px;
+    background: #fff;
+}
+.login-externo-content {
+    margin-bottom: 40px;
+}
+.cadastre-se {
+    text-align: center;
+}
+/*Esqueceu a Senha --------------------------------------------------------------------------------------------------------------------------*/
+#esqueceu-senha {
+    background-color: white;
+    padding-top: 8rem;
+}
+.lembrou-a-senha {
+    margin: 30px 0;
 }
 
-.esqueci-a-senha {
-    margin-top: 20px;
-}
-
-.icon {
-    float: left;
-    padding-top: 7px;
-    padding-right: 5px;
-    color: var(--texto-claro);
+#cadastre-se {
+    background-color: white;
+    padding-top: 8rem;
 }
 /*Secao comercial --------------------------------------------------------------------------------------------------------------------------*/
 .block-bg {

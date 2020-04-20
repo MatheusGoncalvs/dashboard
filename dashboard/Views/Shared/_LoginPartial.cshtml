@@ -4,11 +4,6 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
-@{
-    var nomecompleto = User.Identity.IsAuthenticated ?
-        User.Claims.First(c => c.Type == "NomeCompleto").Value : "";
-}
-
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
@@ -25,7 +20,7 @@
                 <i class="fas fa-user"></i>
             </div>
             <div>
-                <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@nomecompleto</a>
+                <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@User.Identity.Name!</a>
             </div>
         </li>
     }
