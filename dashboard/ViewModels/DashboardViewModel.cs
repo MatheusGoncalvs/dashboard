@@ -7,5 +7,7 @@ namespace dashboard.ViewModels
         public PedidosFaturadosEmitidosViewModel Pedidos { get; set; }
 
         public IEnumerable<VendedoresViewModel> Vendedores { get; set; }
+
+        public double SomaValorPedidos { get; set; }
     }
 }

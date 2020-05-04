@@ -9,16 +9,18 @@ namespace dashboard.Services
 {
     public interface IDashboardRepository
     {
-        IEnumerable<MovimentacaoViewModel> GetVendedores();
+        IEnumerable<MovimentacaoViewModel> GetTodosVendedoresComSeusPedidos();
 
         IEnumerable<DashboardViewModel> GetData(DateTime dataInicial, DateTime dataFinal);
 
         IEnumerable<VendedoresViewModel> GetTotalVendasPorVendedor(DateTime dataInicial, DateTime dataFinal);
 
-        int GetPedidosEmitidos(DateTime dataInicial, DateTime dataFinal);
+        int GetQuantidadePedidosEmitidos(DateTime dataInicial, DateTime dataFinal);
 
-        int GetPedidosFaturados(DateTime dataInicial, DateTime dataFinal);
+        int GetQuantidadePedidosFaturados(DateTime dataInicial, DateTime dataFinal);
 
-        PedidosFaturadosEmitidosViewModel GetPedidosEmitidosxFaturados(DateTime dataInicial, DateTime dataFinal);
+        PedidosFaturadosEmitidosViewModel GetQuantidadePedidosEmitidosxFaturados(DateTime dataInicial, DateTime dataFinal);
+
+        double GetValorPedidosFaturados(DateTime dataInicial, DateTime dataFinal);
     }
 }

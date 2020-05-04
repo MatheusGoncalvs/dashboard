@@ -1,60 +1,57 @@
 ﻿$(window).on('load', function () {
     $(".loader").fadeOut("slow");
     $("#section-comercial").toggle("fast");
+    //Ultima atualização
     let hoje = new Date();
-    $('.ultimaAtualizacao').html("Última atualização: "
-        + hoje.getDate()
-        + "/"
-        + hoje.getMonth()
-        + "/"
-        + hoje.getFullYear()
-        + " às "
-        + hoje.getHours()
-        + ":"
-        + hoje.getMinutes()
-        + ":"
-        + hoje.getSeconds()
-        + " hs"
-    );
+    const dia = hoje.getDate();
+    const mes = hoje.getMonth() + 1;
+    const ano = hoje.getFullYear();
+    const hora = hoje.getHours();
+    const minutos = hoje.getMinutes();
+    const segundos = hoje.getSeconds();
+    $('.ultimaAtualizacao').html(`Última atualização: ${dia}/${mes}/${ano} às ${hora}:${minutos}`);
 });
 
 $(document).ready(function () {
 
-    let totalEmitidos = 0;
-    let totalFaturados = 0;
+    $(function () {
 
-    let GetVendedoresApi = 'Dashboard/GetVendedores';
-
-    $(function RefreshButton(data) {
+        let dataT = new Date();
+        let btndataInicial = `${dataT.getDate()}\ ${dataT.getMonth()}\ ${dataT.getFullYear()} 00:00:00`;
+        let btndataFinal = `${dataT.getDate()}\ ${dataT.getMonth()}\ ${dataT.getFullYear()} 00:00:00`;
 
         $('input.switch').click(function () {
             if ($('#dia').is(":checked")) {
-                totalEmitidos = data.Emitidos;
-                totalFaturados = data.Faturados;
-                $('#qtdPedidosNaoFaturados').html(totalEmitidos);
-                $('#qtdPedidosFaturados').html(totalFaturados);
-                drawChart();
+                btndataInicial = dataT.getDate();
+                btndataFinal = dataT.getDate();
             }
             else if ($('#semana').is(":checked")) {
-                totalEmitidos = 200;
-                totalFaturados = 20;
-                $('#qtdPedidosNaoFaturados').html(totalEmitidos);
-                $('#qtdPedidosFaturados').html(totalFaturados);
-                drawChart();
+                btndataInicial = dataT.getDate();
+                btndataFinal = dataT.getDate();
             } else if ($('#mes').is(":checked")) {
-                totalEmitidos = 2000;
-                totalFaturados = 2126;
-                $('#qtdPedidosNaoFaturados').html(totalEmitidos);
-                $('#qtdPedidosFaturados').html(totalFaturados);
-                drawChart();
+                btndataInicial = dataT.getDate();
+                btndataFinal = dataT.getDate();
             }
-            else {
-                totalEmitidos = 20;
-                totalFaturados = 15;
-                $('#qtdPedidosNaoFaturados').html(totalEmitidos);
-                $('#qtdPedidosFaturados').html(totalFaturados);
-                drawChart();
-            }
+
+            $.ajax({
+                url: 'Dashboard/AtualizaDados',
+                data: { "DataInicial": btndataInicial, "DataFinal": btndataFinal },
+                dataType: "json",
+                type: "POST",
+                error: function (xhr, status, error) {
+                    var err = eval(" (" + xhr.responseText + ") ");
+                    //toast.error(err.message);
+                },
+                success: function (data) {
+                    //$('.block').html("Requisição concluída...");
+                    let totalEmitidos = data[0].pedidos.emitidos;
+                    let totalFaturados = data[0].pedidos.faturados;
+                    $('#qtdPedidosNaoFaturados').html(totalEmitidos);
+                    $('#qtdPedidosFaturados').html(totalFaturados);
+                    return false;
+                }
+            });
+
         });
 
         $('input.switch').click(function () {
@@ -122,9 +119,9 @@ $(document).ready(function () {
                     AtualizaDados(data);
                     $("#toggle").removeClass("on");
                     $('#displayData').html(
-                        dataInicial.replace(/(\d*)-(\d*)-(\d*).*/, '$3-$2-$1') +
+                        dataInicial.replace(/(\d*)-(\d*)-(\d*).*/, '$3/$2/$1') +
                         " a " +
-                        dataFinal.replace(/(\d*)-(\d*)-(\d*).*/, '$3-$2-$1')
+                        dataFinal.replace(/(\d*)-(\d*)-(\d*).*/, '$3/$2/$1')
                     );
                     return false;
                 }
@@ -133,6 +130,8 @@ $(document).ready(function () {
     }
 
     function AtualizaDados(data) {
+
+        AtualizaBlocoFaturamento(data);
 
         const dataArray = [
             ['Vendedor', 'TotalVendas']
@@ -170,6 +169,11 @@ $(document).ready(function () {
 
         var chart = new google.visualization.ColumnChart(document.getElementById('chart-pedidosFaturadosNaoFaturados'));
         chart.draw(dataPedidos, options);
+    }
+
+    function AtualizaBlocoFaturamento(data) {
+        let ValorPedidosFaturados = data[0].somaValorPedidos;
+        $('#faturamento-dia').html(ValorPedidosFaturados);
     }
 
     //Animação toggle informar intervalo de datas-----------------------------------------------------------------

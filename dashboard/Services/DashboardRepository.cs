@@ -17,30 +17,40 @@ namespace dashboard.Services
             this.db = db;
         }
 
-        public int GetPedidosEmitidos(DateTime dataInicial, DateTime dataFinal)
+        public int GetQuantidadePedidosEmitidos(DateTime dataInicial, DateTime dataFinal)
         {
             return db.pedido.Where(
                 pedido => pedido.Id >= 0 && pedido.DataPedido >= dataInicial && pedido.DataPedido <= dataFinal
                 ).Count();
         }
 
-        public int GetPedidosFaturados(DateTime dataInicial, DateTime dataFinal)
+        public int GetQuantidadePedidosFaturados(DateTime dataInicial, DateTime dataFinal)
         {
             return db.pedido.Where(
                 pedido => pedido.Faturado == true && pedido.DataPedido >= dataInicial && pedido.DataPedido <= dataFinal
                 ).Count();
         }
 
-        public PedidosFaturadosEmitidosViewModel GetPedidosEmitidosxFaturados(DateTime dataInicial, DateTime dataFinal)
+        public PedidosFaturadosEmitidosViewModel GetQuantidadePedidosEmitidosxFaturados(DateTime dataInicial, DateTime dataFinal)
         {
             PedidosFaturadosEmitidosViewModel pedido = new PedidosFaturadosEmitidosViewModel();
-            pedido.Faturados = GetPedidosFaturados(dataInicial, dataFinal);
-            pedido.Emitidos = GetPedidosEmitidos(dataInicial, dataFinal);
+            pedido.Faturados = GetQuantidadePedidosFaturados(dataInicial, dataFinal);
+            pedido.Emitidos = GetQuantidadePedidosEmitidos(dataInicial, dataFinal);
 
             return pedido;
         }
 
-        public IEnumerable<MovimentacaoViewModel> GetVendedores()
+        public double GetValorPedidosFaturados(DateTime dataInicial, DateTime dataFinal)
+        {
+
+            var pedidos = from pedido in db.pedido.ToList()
+                          where pedido.Faturado == true && pedido.DataPedido >= dataInicial && pedido.DataPedido <= dataFinal
+                          select pedido;
+
+            return pedidos.Sum(p => p.Valor);
+        }
+
+        public IEnumerable<MovimentacaoViewModel> GetTodosVendedoresComSeusPedidos()
         {
             return db.pedido.
                             Join(db.vendedor, pedido => pedido.IdVendedor,
@@ -57,7 +67,7 @@ namespace dashboard.Services
 
         public IEnumerable<VendedoresViewModel> GetTotalVendasPorVendedor(DateTime dataInicial, DateTime dataFinal)
         {
-            var movimentacoes = GetVendedores();
+            var movimentacoes = GetTodosVendedoresComSeusPedidos();
 
             var somaVendas = from movimentacao in movimentacoes
                              where movimentacao.DataPedido >= dataInicial && movimentacao.DataPedido <= dataFinal
@@ -74,8 +84,9 @@ namespace dashboard.Services
         public IEnumerable<DashboardViewModel> GetData(DateTime dataInicial, DateTime dataFinal)
         {
             DashboardViewModel dados = new DashboardViewModel();
-            dados.Pedidos = GetPedidosEmitidosxFaturados(dataInicial, dataFinal);
+            dados.Pedidos = GetQuantidadePedidosEmitidosxFaturados(dataInicial, dataFinal);
             dados.Vendedores = GetTotalVendasPorVendedor(dataInicial, dataFinal);
+            dados.SomaValorPedidos = GetValorPedidosFaturados(dataInicial, dataFinal);
 
             List<DashboardViewModel> dadosDashboard = new List<DashboardViewModel>();
             dadosDashboard.Add(dados);
