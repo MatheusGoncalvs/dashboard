@@ -50,6 +50,14 @@ namespace dashboard.Services
             return pedidos.Sum(p => p.Valor);
         }
 
+        public double GetValorPedidosFaturadosHoje() {
+            var pedidos = from pedido in db.pedido.ToList()
+            where pedido.Faturado && pedido.DataPedido.Day == DateTime.Now.Day
+            select pedido;
+
+            return pedidos.Sum(p => p.Valor);
+        }
+
         public IEnumerable<MovimentacaoViewModel> GetTodosVendedoresComSeusPedidos()
         {
             return db.pedido.
@@ -87,6 +95,7 @@ namespace dashboard.Services
             dados.Pedidos = GetQuantidadePedidosEmitidosxFaturados(dataInicial, dataFinal);
             dados.Vendedores = GetTotalVendasPorVendedor(dataInicial, dataFinal);
             dados.SomaValorPedidos = GetValorPedidosFaturados(dataInicial, dataFinal);
+            dados.SomaValorPedidosFaturadosHoje = GetValorPedidosFaturadosHoje();
 
             List<DashboardViewModel> dadosDashboard = new List<DashboardViewModel>();
             dadosDashboard.Add(dados);

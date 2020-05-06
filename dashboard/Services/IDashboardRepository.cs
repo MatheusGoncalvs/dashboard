@@ -22,5 +22,6 @@ namespace dashboard.Services
         PedidosFaturadosEmitidosViewModel GetQuantidadePedidosEmitidosxFaturados(DateTime dataInicial, DateTime dataFinal);
 
         double GetValorPedidosFaturados(DateTime dataInicial, DateTime dataFinal);
+        double GetValorPedidosFaturadosHoje();
     }
 }

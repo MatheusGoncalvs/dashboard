@@ -90,6 +90,7 @@ $(document).ready(function () {
             success: function (data) {
                 //$('.block').html("Requisição concluída...");
                 //$('#displayData').html("01/01/2020 a 31/12/2020");
+                AtualizaBlocoFaturamento(data);
                 AtualizaDados(data);
                 return false;
             }
@@ -131,7 +132,6 @@ $(document).ready(function () {
 
     function AtualizaDados(data) {
 
-        AtualizaBlocoFaturamento(data);
 
         const dataArray = [
             ['Vendedor', 'TotalVendas']
@@ -172,8 +172,7 @@ $(document).ready(function () {
     }
 
     function AtualizaBlocoFaturamento(data) {
-        let ValorPedidosFaturados = data[0].somaValorPedidos;
-        $('#faturamento-dia').html(ValorPedidosFaturados);
+        $('#faturamento-dia').html(data[0].somaValorPedidosFaturadosHoje);
     }
 
     //Animação toggle informar intervalo de datas-----------------------------------------------------------------
